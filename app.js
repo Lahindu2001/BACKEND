@@ -7,7 +7,7 @@ const router = require("./Routes/UserRoutes");
 const app = express();
 
 //midlware
-app.use("/",router)
+app.use("/users",router);
 
 
 mongoose.connect("mongodb+srv://admin:5ujIqBeOwJYjq1hM@cluster1.lmzaxue.mongodb.net/")
