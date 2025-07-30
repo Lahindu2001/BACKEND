@@ -2,13 +2,12 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+const router = require("./Routes/UserRoutes");
 
 const app = express();
 
 //midlware
-app.use("/",( req , res , next) => {
-    res.send("It is working");
-})
+app.use("/",router)
 
 
 mongoose.connect("mongodb+srv://admin:5ujIqBeOwJYjq1hM@cluster1.lmzaxue.mongodb.net/")
