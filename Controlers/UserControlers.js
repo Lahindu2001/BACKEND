@@ -36,9 +36,30 @@ try{
 if(!users){
     return res.status(404).json({message:"unable to addd users"});
 }
-    return res.status(200).json({users});
+    return res.status(200).json({ users });
 };
+
+
+//get id
+const getbyId = async(req , res , next ) => {
+    const id = req.params.id;
+    let users;
+
+    try{
+        users = await User.findById(id);
+
+    }catch(err){
+        console.log(err);
+    }
+//not in id
+if(!users){
+    return res.status(404).json({message:"unable find user"});
+}
+    return res.status(200).json({ users });
+};
+    
 
 
 exports.getAllUsers = getAllUsers;
 exports.addUsers = addUsers;
+exports.getbyId = getbyId ;
