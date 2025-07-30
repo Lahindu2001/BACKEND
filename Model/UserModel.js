@@ -14,7 +14,7 @@ const userSchema = new Schema({
         type:Number , // dataType
         required:true, //validate
     },
-    adress:{
+    address:{
         type:String , // dataType
         required:true, //validate
     }
